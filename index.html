@@ -102,14 +102,15 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
-          var canvas2 = document.getElementById('myCanvas2');
-          var context2 = canvas2.getContext("2d");
+          var canvas2 = document.getElementById('myCanvas2'); //variable creates new canvas
+          var context2 = canvas2.getContext("2d"); //a 2d image will be shown in the canvas
+         
+          var imageData = context.getImageData(0, 0, 600, 500); //x, y, width, height coordinates for image to load on
+          var data = imageData.data;
           
       /* Second canvas is made and is named mycanvas2 to identify it */
         } // end of img.onload
         
-         var imageData = context.getImageData(0, 0, 600, 500);
-         var data = imageData.data;
        
         img.src = reader.result;
       } //  end of reader.onload
