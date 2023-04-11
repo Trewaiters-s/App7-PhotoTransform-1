@@ -109,11 +109,11 @@
           var data = imageData.data;
           
           for(var i=0, n=data.length; i < n; i+=4) { // Command will remove green and red from image
-            data[i]=0
-            data[i + 1]= 0;
+            data[i]=0 //green intensity is set to 0
+            data[i + 1]= 0; //red intensity is set to 0, used help from peers and google to get this
           }
          
-         context2.putImageData(imageData, 0, 0);
+         context2.putImageData(imageData, 0, 0); //new image to display in canvas 2 will now only show blue pixels
            
           } // end of img.onload
         
@@ -140,27 +140,27 @@
     <div data-role="content">	
       <h2>Push button to take picture.</h2>
       <div>
-        Press orange button to create or choose image file:
+        Press orange button to create or choose image file: <!-- user will be able to upload image from their files -->
         <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
       </div>
       <div id="messageDisplayArea"></div>
       
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
-        context.font = '20pt Calibri';
-        context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
+        var canvas = document.getElementById('myCanvas'); //command creates canvas 1
+        var context = canvas.getContext("2d"); // command will display the canvas image in 2d
+        context.font = '20pt Calibri'; // sets font and size of canvas 1
+        context.fillStyle = "black"; // sets color for statement in canvas 1
+        context.fillText("Original image will go here", 10, 20); // line will appear inside canvas 1 to differentiate btwn the two canvases
       </script>
      
      <canvas id='myCanvas2' width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
      <script> /* Initiates the second canvas and puts the text on the respective canvas 'myCanvas2' */
-        var canvas2 = document.getElementById('myCanvas2'); 
-        var context2 = canvas2.getContext("2d");
+        var canvas2 = document.getElementById('myCanvas2'); //creates canvas 2
+        var context2 = canvas2.getContext("2d"); // command will display the new canvas image in 2d
         context2.font = '20pt Calibri'; //sets font and size
         context2.fillStyle = "black"; //sets color for words
-        context2.fillText("Analyzed image will go here", 10, 20); // will place image in canvas with respect to the x, y coordinates
+        context2.fillText("Analyzed image will go here", 10, 20); // will place image in canvas with respect to the x, y coordinates as well as display a line to distinguish as canvas 2
      </script>
 
     </div><!-- /content -->
