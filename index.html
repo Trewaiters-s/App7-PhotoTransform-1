@@ -108,6 +108,9 @@
       /* Second canvas is made and is named mycanvas2 to identify it */
         } // end of img.onload
         
+         var imageData = context.getImageData(0, 0, 600, 500);
+         var data = imageData.data;
+       
         img.src = reader.result;
       } //  end of reader.onload
       
